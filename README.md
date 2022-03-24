@@ -27,6 +27,17 @@ To get a local copy up and running follow these simple example steps.
 - Execute `rails db:create` to create the database.
 - Run `rails s` to run the application.
 
+## Tests
+- If you want to run some unit tests, all you need to do is: 
+- On your terminal execute: 
+> `gem install rspec`
+- Run the `rspec` command in this case over the path of `spec/`, the resulting command will look like this:
+> `rspec spec/`
+- If you want to run only over a specific set of tests, you can do it specifying the folder path containing the set of test, like this:
+> `rspec spec/requests`
+- If you want to run the tests over the entire project, you can execute the following command:
+> `rspec`
+
 ## Authors
 
 👤 **Luis Abarca**
