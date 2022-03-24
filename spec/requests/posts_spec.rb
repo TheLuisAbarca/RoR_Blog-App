@@ -14,23 +14,23 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'response body includes correct placeholder text' do
-      expect(response.body).to include("Username: Comment 1")
+      expect(response.body).to include('Username: Comment 1')
     end
   end
 
   describe 'GET #show', type: :request do
-  before(:example) { get '/users/:user_id/posts/:id' }
+    before(:example) { get '/users/:user_id/posts/:id' }
 
-  it 'is a success' do
-    expect(response).to have_http_status(:ok)
-  end
+    it 'is a success' do
+      expect(response).to have_http_status(:ok)
+    end
 
-  it "renders 'index' template" do
-    expect(response).to render_template('show')
-  end
+    it "renders 'index' template" do
+      expect(response).to render_template('show')
+    end
 
-  it 'response body includes correct placeholder text' do
-    expect(response.body).to include("Post 1 by username")
-  end
+    it 'response body includes correct placeholder text' do
+      expect(response.body).to include('Post 1 by username')
+    end
   end
 end
