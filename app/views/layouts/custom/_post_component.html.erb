@@ -1,0 +1,19 @@
+<%= link_to user_post_path(post.author, post), class:"post-component" do %>
+  <div class="post-div">
+    <h3><%= post.title %></h3>
+    <p><%= post.text %></p>
+    <p class="post-right">Comments: 
+        <% if post.commentsCounter.nil? %>
+            0
+        <% else %>
+            <%= post.commentsCounter %>
+        <% end %>
+    , Likes: 
+        <% if post.likesCounter.nil? %>
+            0
+        <% else %>
+            <%= post.likesCounter %>
+        <% end %>
+    </p>
+  </div>
+<% end %>

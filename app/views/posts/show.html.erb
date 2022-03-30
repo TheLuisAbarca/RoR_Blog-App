@@ -1,13 +1,29 @@
-<div> 
-  <h3>Post 1 by username</h3>
-  <p>Comments: x - Likes: y</p>
-  <p>Post Content</p>
+<h1>Post</h1>
+<div class="post-div">
+  <h3 class="post-title">
+    <%= @post.title %>
+  </h3>
+    <p class="post-upper-right">Comments: 
+      <% if @post.commentsCounter.nil? %>
+          0
+      <% else %>
+          <%= @post.commentsCounter %>
+      <% end %>
+      , Likes: 
+      <% if @post.likesCounter.nil? %>
+          0
+      <% else %>
+          <%= @post.likesCounter %>
+      <% end %>
+    </p>
+  <p><%= @post.text %></p>
 </div>
-<div> 
-  <p>Username: Comment 1</p>
-  <p>Username: Comment 2</p>
-  <p>Username: Comment 3</p>
-  <p>Username: Comment 4</p>
-  <p>Username: Comment 5</p>
-  <p>Username: Comment 6</p>
-</div>
+<% if @comments.empty? %>
+  <p>No comments have been writted to this post yet.</p>
+<% else %>
+  <div class="comment-container">
+    <% @comments.each do |comment| %>
+      <%= render 'layouts/custom/comment_component', comment: comment %>
+    <% end %>
+  </div>
+<% end %>
