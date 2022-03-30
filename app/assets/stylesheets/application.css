@@ -14,13 +14,13 @@
  *= require_self
  */
 a {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 ul {
-    list-style: none;
-    padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .user-div {
@@ -60,18 +60,18 @@ ul {
 }
 
 .user-bio {
-    border: 1px solid #000;
-    margin-bottom: 20px;
+  border: 1px solid #000;
+  margin-bottom: 20px;
 }
 
 .posts {
-    margin-top: 80px;
-    width: 50%;
-    text-align: right;
-    padding-right: 10px;
+  margin-top: 80px;
+  width: 50%;
+  text-align: right;
+  padding-right: 10px;
 }
 
-.post-title{
+.post-title {
   margin-bottom: 0;
 }
 
@@ -82,11 +82,11 @@ ul {
 }
 
 .post-upper-right {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    margin-top: 0;
-    margin-bottom: 0;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .post-div {
@@ -96,11 +96,11 @@ ul {
 }
 
 a.post-component {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.main-comment-container{
+.main-comment-container {
   margin-top: 24px;
 }
 
@@ -128,14 +128,14 @@ a.post-component {
 }
 
 .button {
-    margin: 0 auto;
-    height: 25px;
-    background: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid #000;
-    color: black;
-    font-weight: bold;
-    line-height: 25px;
+  margin: 0 auto;
+  height: 25px;
+  background: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #000;
+  color: black;
+  font-weight: bold;
+  line-height: 25px;
 }
