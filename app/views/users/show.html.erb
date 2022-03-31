@@ -1,4 +1,18 @@
-<div> 
-  <h4> Post 1 </h4>
-  <p>Comments: x Likes:y</p>
-</div> 
+<div>
+  <%= render 'layouts/custom/user_component', user: @user %>
+
+  <div class="user-bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <% @posts.each do |post| %>
+    <%= render 'layouts/custom/post_component', post: post %>
+  <% end %>
+  <!--button><%= link_to 'See all posts', user_posts_path(@user) %></#button-->
+  <div style="display: flex; justify-content: center;">
+    <a href="/users/<%= @user.id %>/posts" class="button">
+      See all <%= @user.name %>'s posts
+    </a>
+  </div>
+</div>

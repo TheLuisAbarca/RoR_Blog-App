@@ -1,9 +1,22 @@
-<div> 
-  <p>Username: Comment 1</p>
-  <p>Username: Comment 2</p>
-  <p>Username: Comment 3</p>
-  <p>Username: Comment 4</p>
-  <p>Username: Comment 5</p>
-  <p>Username: Comment 6</p>
-</div>
-<button type="button">Pagination Button</button>
+<%= render 'layouts/custom/user_component', user: @user %>
+<% @posts.each do |post| %>
+  <%= render 'layouts/custom/post_component', post: post %>
+
+  <div>
+    <% if post.most_recent_comments.empty? %>
+      <p>No comments have been writted to this post yet.</p>
+    <% else %>
+      <div class="comment-container">
+        <% post.most_recent_comments.each do |comment| %>
+          <%= render 'layouts/custom/comment_component', comment: comment %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+  <div style="display: flex; justify-content: center;">
+    <a href="/users/<%= @user.id %>/posts" class="button">
+      Pagination
+    </a>
+  </div>

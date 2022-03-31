@@ -1,4 +1,8 @@
-<div>
-  <h1>User name</h1>
-  <p> Number of posts: x </p>
-</div> 
+<h1>Users</h1>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= render 'layouts/custom/user_component', user: user %> <br>
+    </li>
+  <% end %>
+</ul>
