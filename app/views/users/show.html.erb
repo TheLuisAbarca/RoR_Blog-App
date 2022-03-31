@@ -6,7 +6,7 @@
     <p><%= @user.bio %></p>
   </div>
 
-  <% @posts.each do |post| %>
+  <% @user.most_recent_posts.each do |post| %>
     <%= render 'layouts/custom/post_component', post: post %>
   <% end %>
   <!--button><%= link_to 'See all posts', user_posts_path(@user) %></#button-->
