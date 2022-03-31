@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-  has_many :comment
-  has_many :like
+  has_many :comments
+  has_many :likes, dependent: :destroy
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   after_save :update_counter
 
@@ -9,7 +9,17 @@ class Post < ApplicationRecord
     user.increment!(:postsCounter)
   end
 
+  def update_comments_counter
+    self.commentsCounter = Comment.where(post_id: id).count
+    save
+  end
+
+  def update_likes_counter
+    self.likesCounter = Like.where(post_id: id).count
+    save
+  end
+
   def most_recent_comments
-    Comment.where(posts_id: id).last(5)
+    Comment.where(post_id: id).last(5)
   end
 end
