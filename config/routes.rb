@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   # get 'users/:user_id/posts/:id', to: 'posts#show'
 
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show, :create]
+    resources :posts, only: [:index, :show, :new, :create]
   end
 
-  resources :posts do
-    resources :comments, only: [:create]
+  resources :posts, only: [:new, :create] do
+    resources :comments, only: [:new, :create]
     resources :likes, only: [:create]
   end
   # Defines the root path route ("/")

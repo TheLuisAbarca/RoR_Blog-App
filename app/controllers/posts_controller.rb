@@ -11,6 +11,10 @@ class PostsController < ApplicationController
     @comment = Comment.all.where("post_id = #{params[:id]}, user_id = #{params[:user_id]}")
   end
 
+  def new
+    @post = Post.new
+  end
+
   def create
     @user = User.find(params[:user_id])
 
