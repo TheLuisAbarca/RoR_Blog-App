@@ -10,10 +10,10 @@
           <%= @post.commentsCounter %>
       <% end %>
       , Likes: 
-      <% if @post.likes.count.nil? %>
+      <% if @post.likesCounter.nil? %>
           0
       <% else %>
-          <%= @post.likes.count %>
+          <%= @post.likesCounter %>
       <% end %>
     </p>
   <p><%= @post.text %></p>
