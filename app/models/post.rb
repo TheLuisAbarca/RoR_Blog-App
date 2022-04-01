@@ -1,4 +1,9 @@
 class Post < ApplicationRecord
+  validates :title, presence: true
+  validates :title, length: { maximum: 250 }
+  validates :commentsCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_blank: true
+  validates :likesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_blank: true
+
   has_many :comments
   has_many :likes, dependent: :destroy
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
