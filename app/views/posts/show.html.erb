@@ -10,10 +10,10 @@
           <%= @post.commentsCounter %>
       <% end %>
       , Likes: 
-      <% if @post.likesCounter.nil? %>
+      <% if @post.likes.count.nil? %>
           0
       <% else %>
-          <%= @post.likesCounter %>
+          <%= @post.likes.count %>
       <% end %>
     </p>
   <p><%= @post.text %></p>
@@ -27,3 +27,6 @@
     <% end %>
   </div>
 <% end %>
+
+<%= render 'comments/comments_component' %>
+<%= render 'likes/likes_component' %>
