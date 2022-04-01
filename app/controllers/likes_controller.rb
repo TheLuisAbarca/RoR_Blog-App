@@ -7,6 +7,7 @@ class LikesController < ApplicationController
       redirect_to user_post_path(@user, @post), notice: 'Successfully added a Like!'
     else
       flash.now[:notice] = 'Failed to add Like.'
+      render 'posts/show'
     end
   end
 

@@ -23,7 +23,7 @@ class PostsController < ApplicationController
       redirect_to user_path(@user), notice: 'Successfully added a Post!'
     else
       flash.now[:notice] = 'Failed to create a Post.'
-      render :new
+      render 'users/show'
     end
   end
 
