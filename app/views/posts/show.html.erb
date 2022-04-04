@@ -1,4 +1,7 @@
 <h1>Post</h1>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
 <div class="post-div">
   <h3 class="post-title">
     <%= @post.title %>
@@ -10,10 +13,10 @@
           <%= @post.commentsCounter %>
       <% end %>
       , Likes: 
-      <% if @post.likes.count.nil? %>
+      <% if @post.likesCounter.nil? %>
           0
       <% else %>
-          <%= @post.likes.count %>
+          <%= @post.likesCounter %>
       <% end %>
     </p>
   <p><%= @post.text %></p>
