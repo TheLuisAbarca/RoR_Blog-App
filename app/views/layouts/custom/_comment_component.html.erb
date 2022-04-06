@@ -1,1 +1,4 @@
 <p class="comment-paragraph"><%= comment.find_author %>: <%= comment.text %></p>
+<% if can? :destroy, comment %>
+  <%= button_to "Delete Comment", user_post_comment_path(user_id: current_user.id, post_id: @post.id, id:comment.id), method: :delete %>
+<% end %>

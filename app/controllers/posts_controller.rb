@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: @user.id)
@@ -18,13 +19,20 @@ class PostsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
 
-    @post = @user.posts.new(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to user_path(@user), notice: 'Successfully added a Post!'
     else
       flash.now[:notice] = 'Failed to create a Post.'
       render 'users/show'
     end
+  end
+  
+  def destroy
+    post = Post.find(params[:post_id])
+    post.destroy
+
+    redirect_to user_path, notice: 'Post is deleted!'
   end
 
   private
